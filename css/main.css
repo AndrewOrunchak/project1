@@ -1,0 +1,105 @@
+html,
+body {
+    height: 99%;
+}
+
+body {
+    background: url(/img/bg.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.dv {
+    display: block;
+    margin: auto;
+    height: 310px;
+    width: 600px;
+    background-color: #ff4d4d;
+    border: #ffd9b3 1px outset;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.dvbtn {
+    display: block;
+    margin: auto;
+    height: 35px;
+    width: 600px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 2px auto;
+    padding: 5px;
+    background-color: #ff4d4d;
+    border: #ffd9b3 1px outset;
+    border-radius: 12px;
+    font-size: 15px;
+    width: 80px;
+    cursor: pointer;
+}
+
+.txt {
+    width: 595px;
+    height: 260px;
+    resize: none;
+}
+
+.nmb {
+    width: 35px;
+}
+
+.code {
+    display: none;
+}
+
+#stl {
+    display: none;
+    padding: 5px;
+}
+
+#add {
+    height: 600px;
+    display: none;
+}
+
+#show {
+    font-family: sans-serif;
+    overflow: auto;
+}
+
+#myColor {
+    margin-top: 5px;
+    height: 150px;
+    width: 200px;
+    border: black double 3px;
+    background: white;
+    display: none;
+}
+
+#addList {
+    display: none;
+}
+
+span {
+    display: none;
+    color: darkred;
+    text-decoration: underline;
+}
+
+#passBlock {
+    display: none;
+    height: 100px;
+    width: 600px;
+    margin: auto;
+    margin-top: -400px;
+    padding: 30px;
+    background: #b3b3b3;
+    border: grey 4px outset;
+    border-radius: 12px;
+}
+
+#wrong {
+    display: none;
+    margin-left: 80px;
+    color: red;
+}

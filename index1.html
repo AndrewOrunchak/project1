@@ -1,9 +1,209 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title> </title>
-    </head>
-    <body>
+<html lang="en">
 
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!--Дів із кодом який можна редагувати-->
+    <div id="show" class="dv">
+        <p>Some text in here...</p>
+        <p>Some text in here...</p>
+        <p>Some text in here...</p>
+        <p>Some text in here...</p>
+    </div>
+    <div class="dvbtn">
+        <!--Кнопки редагування коду і додавання стилю-->
+        <form name="changeCode">
+            <input class="btn" name="change" type="button" value="Change">
+            <input class="btn" name="stylize" type="button" value="Stylize">
+            <input class="btn" name="block" type="button" value="Block">
+        </form>
+    </div>
+    <div class="dv">
+        <form class="code" name="addCode">
+            <!--Область для редагування коду-->
+            <textarea class="txt" name="text"></textarea>
+            <!--Кнопки збереження коду у дів id="show" і додавання таблиці/списку-->
+            <input class="btn" name="save" type="button" value="Save">
+            <input class="btn" name="add" type="button" value="Add">
+        </form>
+        <!--Дів зі стилями-->
+        <div id="stl">
+            <!--форма для fontSize-->
+            <form name="fSize">
+                <p>Size:
+                    <label>
+                        <input type="radio" name="rb" value="12pt" checked>12pt</label>
+                    <label>
+                        <input type="radio" name="rb" value="14pt">14pt</label>
+                    <label>
+                        <input type="radio" name="rb" value="16pt">16pt</label>
+                    <label>
+                        <input type="radio" name="rb" value="18pt">18pt</label>
+                    <label>
+                        <input type="radio" name="rb" value="20pt">20pt</label>
+                </p>
+            </form>
+            <!--форма для fontFamily-->
+            <form name="fFamily" id="sF">
+                <p>Family:
+                    <select name="fml">
+                        <option value="sans-serif">Sans-serif</option>
+                        <option value="fantasy">Fantasy</option>
+                        <option value="monospace">Monospace</option>
+                        <option value="cursive">Cursive</option>
+                    </select>
+                </p>
+            </form>
+            <!--форма для fontStyle-->
+            <form name="fStyle">
+                <p>Style:
+                    <label>
+                        <input type="checkbox" name="bld" value="bold">BOLD</label>
+                    <label>
+                        <input type="checkbox" name="itl" value="italic">ITALIC</label>
+                </p>
+            </form>
+            <!--форма для fontColor/backgroundColor-->
+            <form name="fColor">
+                <label>Color: </label>
+                <input type="button" name="txtCol" value="TEXT">
+                <input type="button" name="bgCol" value="BG">
+            </form>
+            <table id="myColor">
+                <tr>
+                    <td style="background:#00e600"></td>
+                    <td style="background:#ff1a1a"></td>
+                </tr>
+                <tr>
+                    <td style="background:#ffff00"></td>
+                    <td style="background:#0099ff"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!--Дів який додає код таблиці/списку-->
+    <div class="dv" id="add">
+        <h2>What do you want to add?</h2>
+        <form name="newItem">
+            <p>
+                <label>
+                    <input type="radio" name="irb" value="addTable" checked>Table</label>
+                <label>
+                    <input type="radio" name="irb" value="addList">List</label>
+            </p>
+        </form>
+        <div id="addTable">
+            <form name="cnr">
+                <label>Number of rows:
+                    <input class="nmb" type="number" min="1" name="r" id="tableRow"><span> Wrong!!!</span>
+                </label>
+                <p>
+                    <label>Number of colomns:
+                        <input class="nmb" type="number" min="1" name="c" id="tableClmn"><span> Wrong!!!</span>
+                    </label>
+                </p>
+            </form>
+            <h3>Style for table</h3>
+            <form name="hnw">
+                <p>
+                    <label>height:
+                        <input type="text" name="h" id="tableHeight"><span> Wrong!!!</span>
+                    </label>
+                </p>
+                <p>
+                    <label>width:
+                        <input type="text" name="w" id="tableWidth"><span> Wrong!!!</span>
+                    </label>
+                </p>
+            </form>
+            <form name="border">
+                <p>
+                    <label>Border width:
+                        <input type="text" name="bw" id="tableBorder"><span> Wrong!!!</span>
+                    </label>
+                </p>
+                <p>
+                    <label>type:
+                        <select name="bType">
+                            <option value="solid">solid</option>
+                            <option value="double">double</option>
+                            <option value="inset">inset</option>
+                        </select>
+                    </label>
+                    <label>color:
+                        <select name="bCol">
+                            <option value="yellow">yellow</option>
+                            <option value="black">black</option>
+                            <option value="white">white</option>
+                        </select>
+                    </label>
+                </p>
+            </form>
+            <form name="fTable">
+                <input class="btn" name="myTable" type="button" value="Create T">
+            </form>
+        </div>
+        <div id="addList">
+            <form name="fType">
+                <p>
+                    <label>List :
+                        <select name="liType">
+                            <option value="ol">ordered</option>
+                            <option value="ul">unordered</option>
+                        </select>
+                    </label>
+                </p>
+            </form>
+            <form name="fLiTypeUl" id="listInfo">
+                <p>
+                    <label>Type:
+                        <select name="liType">
+                            <option value="disc">disc</option>
+                            <option value="circle">circle</option>
+                            <option value="square">square</option>
+                        </select>
+                    </label>
+                </p>
+            </form>
+            <form name="fLiTypeOl" id="listInfo">
+                <p>
+                    <label>Type:
+                        <select name="liType">
+                            <option value="1">1</option>
+                            <option value="i">i</option>
+                            <option value="I">I</option>
+                        </select>
+                    </label>
+                </p>
+            </form>
+            <form name="fLi" id="listInfo">
+                <p>
+                    <label>Number of items:
+                        <input class="nmb" type="number" min="1" name="liNum" id="listItems"><span> Wrong!!!</span>
+                    </label>
+                </p>
+            </form>
+            <form name="fList">
+                <input class="btn" name="myList" type="button" value="Create L">
+            </form>
+        </div>
+    </div>
+    <div id="passBlock">
+        <form name="mypass">
+            <label>Password:
+                <input type="password" name="pass" autofocus>
+                <input type="button" name="login" value="Submit">
+                <p id="wrong">Wrong!!!</p>
+            </label>
+        </form>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
