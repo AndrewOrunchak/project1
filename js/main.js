@@ -8,101 +8,104 @@
         // 1.отримати код з дів у textarea
         // 2.показати форму з textarea
         // 3.приховати дів зі стилями
-        df.changeCode.change.onclick = function () {
+        df.changeCode.change.onclick = function() {
                 df.addCode.text.value = bodyChild[0].innerHTML;
                 df.addCode.style.display = 'inherit';
                 getE("stl").style.display = 'none';
             }
             // 1.приховати форму з textarea
             // 2.показати дів зі стилями
-        df.changeCode.stylize.onclick = function () {
+        df.changeCode.stylize.onclick = function() {
                 df.addCode.style.display = 'none';
                 getE("stl").style.display = 'inherit';
             }
             // показати дів із створенням таблиці/списку
-        df.addCode.add.onclick = function () {
+        df.addCode.add.onclick = function() {
                 getE("add").style.display = "inherit";
                 for (var i = 0; i < bodyChild.length - 3; i++) {
                     bodyChild[i].style.display = "none";
                 }
             }
             // зберегти код з textarea у дів
-        df.addCode.save.onclick = function () {
+        df.addCode.save.onclick = function() {
                 bodyChild[0].innerHTML = df.addCode.text.value;
                 df.addCode.text.value = '';
             }
             // зміна розмуру тексту через input type="radio"
         for (var i = 0; i < df.fSize.length; i++) {
-            df.fSize.elements[i].onclick = function () {
+            df.fSize.elements[i].onclick = function() {
                 if (this.checked) {
                     getE("show").style.fontSize = this.value;
                 }
             }
         }
         // зміни стилю та товщини тексту через input type="checkbox"
-        df.fStyle.bld.onclick = function () {
+        df.fStyle.bld.onclick = function() {
             if (df.fStyle.bld.checked) {
                 getE("show").style.fontWeight = this.value;
-            } else {
+            }
+            else {
                 getE("show").style.fontWeight = "normal";
             }
         }
-        df.fStyle.itl.onclick = function () {
+        df.fStyle.itl.onclick = function() {
                 if (df.fStyle.itl.checked) {
                     getE("show").style.fontStyle = this.value;
-                } else {
+                }
+                else {
                     getE("show").style.fontStyle = "normal";
                 }
             }
             // зміна шрифту через select
         for (var i = 0; i < df.fFamily.fml.length; i++) {
-            df.fFamily.fml.onclick = function () {
+            df.fFamily.fml.onclick = function() {
                 getE("show").style.fontFamily = this.value;
             }
         }
         // 1.2. зміна кольору для тексту і фону
         // 3. приховати табличку *miss-click*
-        df.fColor.txtCol.onclick = function () {
+        df.fColor.txtCol.onclick = function() {
             getE("myColor").style.display = "table";
             var tdCol = document.getElementsByTagName("td");
             for (var i = 0; i < tdCol.length; i++) {
-                tdCol[i].onclick = function () {
+                tdCol[i].onclick = function() {
                     getE("show").style.color = this.style.background;
                 }
             }
 
         }
-        df.fColor.bgCol.onclick = function () {
+        df.fColor.bgCol.onclick = function() {
             getE("myColor").style.display = "table";
             var tdCol = document.getElementsByTagName("td");
             for (var i = 0; i < tdCol.length; i++) {
-                tdCol[i].onclick = function () {
+                tdCol[i].onclick = function() {
                     getE("show").style.background = this.style.background;
                 }
             }
         }
-        document.body.addEventListener("mouseup", function (click) {
+        document.body.addEventListener("mouseup", function(click) {
                 if (click.target != getE("myColor")) {
                     getE("myColor").style.display = "none";
                 }
             })
             // додати табличку чи список
         for (var i = 0; i < df.newItem.length; i++) {
-            df.newItem.elements[i].onclick = function () {
+            df.newItem.elements[i].onclick = function() {
                 if (df.newItem.elements[1].checked) {
                     getE("addList").style.display = "inherit";
                     getE("addTable").style.display = "none";
                     df.fLiTypeOl.style.display = "none";
                     df.fLiTypeUl.style.display = "none";
                     df.fLi.style.display = "none";
-                } else {
+                }
+                else {
                     getE("addList").style.display = "none";
                     getE("addTable").style.display = "inherit";
                 }
             }
         }
         // додати код таблиці у textarea
-        df.fTable.myTable.onclick = function () {
+        df.fTable.myTable.onclick = function() {
                 var borW = df.border.bw.value;
                 var tabCol = df.border.bCol.value;
                 var tabType = df.border.bType.value;
@@ -125,7 +128,7 @@
                 }
             }
             // додати код списку у textarea
-        df.fList.myList.onclick = function () {
+        df.fList.myList.onclick = function() {
                 var li = df.fLi.liNum.value;
                 var list = df.fType.liType.value;
                 if (df.fLiTypeUl.style.display == "inherit") {
@@ -151,12 +154,13 @@
         var tableInfo = [getE("tableWidth"), getE("tableHeight"), getE("tableRow"), getE("tableClmn"), getE("tableBorder"), getE("listItems")];
         // перевірка на правильність даних введених користувачем
         for (var i = 0; i < tableInfo.length; i++) {
-            tableInfo[i].onblur = function () {
+            tableInfo[i].onblur = function() {
                 if (this.value > 0) {
                     this.style.borderColor = "green";
                     this.style.backgroundColor = "#00ff00";
                     this.nextSibling.style.display = "none";
-                } else {
+                }
+                else {
                     this.style.borderColor = "red";
                     this.style.backgroundColor = "crimson";
                     this.nextSibling.style.display = "inherit";
@@ -165,28 +169,29 @@
         }
         //  покрокова інструкція створення списку
         for (var i = 0; i < df.fType.liType.length; i++) {
-            df.fType.liType.onblur = function () {
+            df.fType.liType.onblur = function() {
                 if (df.fType.liType.value == "ul") {
                     df.fLiTypeUl.style.display = "inherit";
                     df.fLiTypeOl.style.display = "none";
-                } else {
+                }
+                else {
                     df.fLiTypeOl.style.display = "inherit";
                     df.fLiTypeUl.style.display = "none";
                 }
             }
         }
         for (var i = 0; i < df.fLiTypeUl.liType.length; i++) {
-            df.fLiTypeUl.liType.onblur = function () {
+            df.fLiTypeUl.liType.onblur = function() {
                 df.fLi.style.display = "inherit";
             }
         }
         for (var i = 0; i < df.fLiTypeOl.liType.length; i++) {
-            df.fLiTypeOl.liType.onblur = function () {
+            df.fLiTypeOl.liType.onblur = function() {
                 df.fLi.style.display = "inherit";
             }
         }
 
-        df.changeCode.block.onclick = function () {
+        df.changeCode.block.onclick = function() {
             getE("passBlock").style.display = "inherit";
             var x = document.getElementsByClassName("btn");
             for (var i = 0; i < x.length; i++) {
@@ -195,7 +200,7 @@
             document.getElementsByClassName("txt")[0].style.display = "none";
             getE("stl").style.display = 'none';
         }
-        df.mypass.login.onclick = function () {
+        df.mypass.login.onclick = function() {
             getE("wrong").style.display = "none";
             var pass1 = "111";
             if (pass1 == df.mypass.pass.value) {
@@ -206,9 +211,9 @@
                     x[i].style.display = "inline-block";
                 }
                 document.getElementsByClassName("txt")[0].style.display = "inherit";
-            } else {
+            }
+            else {
                 getE("wrong").style.display = "block";
                 df.mypass.pass.value = "";
             }
         }
-            
